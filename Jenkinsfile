@@ -4,8 +4,8 @@ node {
     stage('Get Services Info') {
         checkout scm
         withCredentials([usernamePassword(credentialsId: 'CONFLUENCE', usernameVariable: 'CONFLUENCE_USERNAME', passwordVariable: 'CONFLUENCE_APITOKEN')]) {
+            bat 
             String serviceInfoCommand = """
-                bat 
                 python -m pip install -r requirements.txt --user
                 python service-getter.py -u ${confUrl} -a ${appName}
             """
