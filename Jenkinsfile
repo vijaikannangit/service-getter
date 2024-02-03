@@ -1,6 +1,6 @@
 node {
     def confUrl = 'https://vijaik.atlassian.net/wiki/rest/api/content/33141?expand=body.storage'
-    def appName = 'RMI Replatform'
+    def appName = 'RMI_Replatform'
 
     stage('Get Services Info') {
         checkout scm
