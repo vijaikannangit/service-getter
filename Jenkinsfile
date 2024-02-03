@@ -1,6 +1,6 @@
 node {
     def confUrl = 'https://vijaik.atlassian.net/wiki/rest/api/content/33141?expand=body.storage'
-    def appName = 'RMI_Replatform'
+    def appName = 'RMI Replatform'
 
     stage('Get Services Info') {
         checkout scm
@@ -9,7 +9,8 @@ node {
             script {
                 def serviceInfoCommand = """
                     python -m pip install -r requirements.txt --user
-                    python service-getter.py -u $confUrl -a $appName
+                    python service-getter.py -u $confUrl -a "$appName"
+                    
                 """
                 
                 // Capture the output of the Python script
