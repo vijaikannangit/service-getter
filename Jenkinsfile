@@ -1,4 +1,3 @@
-
 node {
     String confUrl = 'https://vijaik.atlassian.net/wiki/rest/api/content/33141?expand=body.storage'
     String appName = 'RMI Replatform'
@@ -6,6 +5,7 @@ node {
         checkout scm
         withCredentials([usernamePassword(credentialsId: 'CONFLUENCE', usernameVariable: 'CONFLUENCE_USERNAME', passwordVariable: 'CONFLUENCE_APITOKEN')]) {
             String serviceInfoCommand = """
+                bat 
                 python -m pip install -r requirements.txt --user
                 python service-getter.py -u ${confUrl} -a ${appName}
             """
