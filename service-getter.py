@@ -96,7 +96,7 @@ def find_service_name(table_data, target_application_name):
 #         name (str) : application name
         
 #     Returns:
-#         service_name_dict : Application name and service name as key and value
+#         app_source : Application name and service name as key and value
 #     """    
     app_source = {}
     for row in table_data:
